@@ -83,6 +83,10 @@ flowchart TD
   * *Penerbit:* NIST National Cybersecurity Center of Excellence (NCCoE).
   * *Fokus:* Volume B memberikan cetak biru arsitektur enterprise untuk *Cryptographic Discovery*, otomatisasi audit dependensi, dan integrasi CBOM ke siklus CI/CD.
   * [NIST NCCoE SP 1800-38 Project](https://www.nist.gov/programs-projects/migration-post-quantum-cryptography)
+  * *File PDF Resmi di Repository Ini:*
+    * [Volume A (Executive Summary)](./references/pqc-migration-nist-sp-1800-38a-preliminary-draft.pdf)
+    * [Volume B (Approach, Architecture, and Security Characteristics)](./references/pqc-migration-nist-sp-1800-38b-preliminary-draft.pdf)
+    * [Volume C (How-To Guides)](./references/pqc-migration-nist-sp-1800-38c-preliminary-draft.pdf)
 * **Spesifikasi CycloneDX v1.6 (Cryptographic Assets / CBOM):**
   * *Fokus:* Skema standar industri untuk mendokumentasikan aset kriptografi: algoritma, panjang kunci, mode operasi cipher, fungsi padding, level keamanan (NIST Category 1–5), dan sertifikat digital.
   * [CycloneDX 1.6 Cryptographic Properties Specification](https://cyclonedx.org/docs/1.6/)
@@ -385,9 +389,16 @@ Berikut panduan langkah demi langkah untuk mengimplementasikan proyek portofolio
 
 ## 🏛️ Dokumen Sumber Kebijakan & Referensi Resmi
 
-Dokumen resmi **Blueprint Sistem Pembayaran Indonesia 2030 (BSPI 2030)** dari Bank Indonesia disertakan di repository ini:
+Dokumen resmi standar dan cetak biru kebijakan disertakan di dalam repository ini:
+
+### 1. Bank Indonesia — Sistem Pembayaran
 * **File Resmi (PDF):** [`references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf`](./references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf) (26 MB, 52 Halaman)
 * **Eksekutif Ringkasan Teknis:** [`references/bspi-2030-executive-summary.md`](./references/bspi-2030-executive-summary.md)
+
+### 2. NIST National Cybersecurity Center of Excellence (NCCoE) — SP 1800-38 Suite
+* **Volume A (Executive Summary):** [`references/pqc-migration-nist-sp-1800-38a-preliminary-draft.pdf`](./references/pqc-migration-nist-sp-1800-38a-preliminary-draft.pdf) — Ringkasan eksekutif migrasi PQC bagi para pengambil keputusan & arsitek keamanan.
+* **Volume B (Approach, Architecture, and Security Characteristics):** [`references/pqc-migration-nist-sp-1800-38b-preliminary-draft.pdf`](./references/pqc-migration-nist-sp-1800-38b-preliminary-draft.pdf) — Cetak biru arsitektur enterprise untuk *Cryptographic Discovery*, otomatisasi audit dependensi, CBOM, dan evaluasi algoritma.
+* **Volume C (How-To Guides):** [`references/pqc-migration-nist-sp-1800-38c-preliminary-draft.pdf`](./references/pqc-migration-nist-sp-1800-38c-preliminary-draft.pdf) — Panduan instruksi teknis pengujian laboratorium, instalasi tools penemuan aset kriptografi, dan interoperabilitas.
 
 ---
 
