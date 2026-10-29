@@ -1,0 +1,25 @@
+# OS and Editor files
+.DS_Store
+Thumbs.db
+*.swp
+*.bak
+*~
+.idea/
+.vscode/
+*.iml
+
+# Java build artifacts
+target/
+*.class
+*.jar
+*.war
+
+# Go build artifacts
+*.exe
+*.test
+bin/
+
+# Temporary / Log files
+*.log
+scratch/
+tmp/
