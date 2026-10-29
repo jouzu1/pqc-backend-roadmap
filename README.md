@@ -83,10 +83,8 @@ flowchart TD
   * *Penerbit:* NIST National Cybersecurity Center of Excellence (NCCoE).
   * *Fokus:* Volume B memberikan cetak biru arsitektur enterprise untuk *Cryptographic Discovery*, otomatisasi audit dependensi, dan integrasi CBOM ke siklus CI/CD.
   * [NIST NCCoE SP 1800-38 Project](https://www.nist.gov/programs-projects/migration-post-quantum-cryptography)
-  * *File PDF Resmi di Repository Ini:*
-    * [Volume A (Executive Summary)](./references/pqc-migration-nist-sp-1800-38a-preliminary-draft.pdf)
-    * [Volume B (Approach, Architecture, and Security Characteristics)](./references/pqc-migration-nist-sp-1800-38b-preliminary-draft.pdf)
-    * [Volume C (How-To Guides)](./references/pqc-migration-nist-sp-1800-38c-preliminary-draft.pdf)
+  * *File PDF Resmi (Google Drive):*
+    * [Post Quantum Cryptography - Google Drive](https://drive.google.com/drive/u/0/folders/1cYg1miKm8vfst9E355slB-pz1Hgd1mEs) (Memuat berkas PDF lengkap NIST SP 1800-38 Volume A, Volume B, dan Volume C)
 * **Spesifikasi CycloneDX v1.6 (Cryptographic Assets / CBOM):**
   * *Fokus:* Skema standar industri untuk mendokumentasikan aset kriptografi: algoritma, panjang kunci, mode operasi cipher, fungsi padding, level keamanan (NIST Category 1–5), dan sertifikat digital.
   * [CycloneDX 1.6 Cryptographic Properties Specification](https://cyclonedx.org/docs/1.6/)
