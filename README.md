@@ -1,13 +1,50 @@
-# Roadmap Belajar Terapan: Applied Post-Quantum Cryptography (PQC) untuk Backend Engineer
+# Applied Post-Quantum Cryptography (PQC) Backend Roadmap
 
-> **Fokus Arsitektur:** Arsitektur Keamanan Backend, API Gateway, Standar Nasional Open API Pembayaran (**SNAP BI**), Infrastruktur Switching / Fast Payment, dan Visi Regulasi **BSPI 2030 (Bank Indonesia)**.  
-> **Dokumen Referensi Resmi:** [`references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf`](./references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf) | Ringkasan BSPI: [`references/bspi-2030-executive-summary.md`](./references/bspi-2030-executive-summary.md) | Panduan Teknis NIST SP 1800-38: [`docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md`](./docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md)
+[![Status](https://img.shields.io/badge/Status-Active%20Research-blue.svg)](https://github.com/jouzu1/pqc-backend-roadmap)
+[![Standards](https://img.shields.io/badge/Standards-NIST%20FIPS%20203%20%7C%20204%20%7C%20205-green.svg)](https://csrc.nist.gov/pubs/fips/204/final)
+[![IETF](https://img.shields.io/badge/IETF-RFC%2010024%20%7C%20RFC%209449-orange.svg)](https://datatracker.ietf.org/doc/rfc10024/)
+[![National Alignment](https://img.shields.io/badge/National%20Vision-Bank%20Indonesia%20BSPI%202030-purple.svg)](./references/bspi-2030-executive-summary.md)
+[![License](https://img.shields.io/badge/License-MIT-lightgrey.svg)](./LICENSE)
+
+> **Kurasi Sumber Belajar Terapan & Arsitektur Enterprise:** Disusun khusus untuk *Backend Engineer*, *Security Architect*, dan praktisi sistem pembayaran guna menguasai transisi **Post-Quantum Cryptography (PQC)** berorientasi pada **Standar Nasional Open API Pembayaran (SNAP BI)**, ketahanan jaringan switching / fast payment, dan visi regulasi **Blueprint Sistem Pembayaran Indonesia 2030 (BSPI 2030)** Bank Indonesia.
 
 ---
 
-Berikut adalah **Kurasi Sumber Belajar Terlengkap & Terapan (Evidence-Based Curriculum)** yang disusun khusus untuk *Backend Developer / Software Architect* guna menguasai seluruh modul pada *blueprint* Post-Quantum Cryptography (PQC), berorientasi pada standar **SNAP BI** dan visi regulasi **BSPI 2030 (Bank Indonesia)**.
+## 🧭 Peta Navigasi Repositori
 
-Katalog ini mencakup standar resmi (NIST FIPS, IETF RFC), repositori *open-source*, *sandbox* laboratorium Docker, buku referensi industri, studi kasus bank sentral dunia (BIS Project Leap), hingga *code snippet* siap pakai.
+Repositori ini disusun secara modular untuk mempermudah navigasi, studi mandiri, dan pengujian laboratorium:
+
+```text
+pqc-backend-roadmap/
+├── README.md                                          # Hub utama repositori & panduan komprehensif
+├── LICENSE                                            # MIT License
+├── .gitignore                                         # Gitignore standar Java/Go/OS
+├── docs/                                              # Dokumentasi terperinci per modul
+│   ├── modules/
+│   │   ├── 01-data-and-code-inventory.md              # Modul 1: CBOM, CycloneDX, Semgrep, AES-256 Envelope Encryption
+│   │   ├── 02-quantum-transport-tls.md                # Modul 2: RFC 10024 X25519MLKEM768, OQS Provider, NGINX Proxy
+│   │   ├── 03-application-asymmetric-pqc-snap-bi.md   # Modul 3: FIPS 203/204/205, ML-DSA-65, SNAP BI Hybrid Signing
+│   │   ├── 04-identity-ai-agent-governance.md         # Modul 4: DPoP RFC 9449, mTLS RFC 8705, SPIFFE/SPIRE, HITL
+│   │   └── 05-performance-hardware-mitigation.md      # Modul 5: PKCS#11 v3.2 HSM, MTU 1500, Buffer Tuning 32KB, gRPC
+│   ├── case-studies/
+│   │   └── bis-project-leap.md                        # Laporan & insight eksperimen RTGS dari BIS, BdF, dan Bundesbank
+│   └── 7-day-portfolio-plan.md                        # Panduan roadmap eksekusi portofolio 7 hari beserta deliverable
+├── examples/                                          # Kode sumber & file konfigurasi siap pakai
+│   ├── java/
+│   │   ├── SnapPqcSigner.java                         # Implementasi Java Bouncy Castle ML-DSA-65 SNAP BI
+│   │   └── pom.xml                                    # Konfigurasi Maven siap compile (mvn exec:java)
+│   ├── nginx/
+│   │   └── nginx-pqc-buffer.conf                      # Template NGINX buffer tuning 32KB & PQC reverse proxy
+│   └── docker/
+│       └── run-oqs-sandbox.sh                         # Skrip pengujian Docker Open Quantum Safe (curl + NGINX)
+└── references/                                        # Dokumen resmi kebijakan & standar internasional
+    ├── README.md                                      # Peta & urutan membaca referensi resmi yang direkomendasikan
+    ├── Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf # Dokumen resmi Bank Indonesia BSPI 2030 (26 MB, 52 Halaman)
+    ├── bspi-2030-executive-summary.md                 # Ringkasan eksekutif korelasi teknis BSPI 2030
+    ├── pqc-migration-nist-sp-1800-38a-preliminary-draft.pdf # NIST SP 1800-38 Vol A (Executive Summary)
+    ├── pqc-migration-nist-sp-1800-38b-preliminary-draft.pdf # NIST SP 1800-38 Vol B (Architecture & CBOM)
+    └── pqc-migration-nist-sp-1800-38c-preliminary-draft.pdf # NIST SP 1800-38 Vol C (How-To Guides)
+```
 
 ---
 
@@ -75,6 +112,20 @@ flowchart TD
 
 ---
 
+## 📑 Matriks Silabus & Panduan Modul
+
+| Modul | Fokus Arsitektural | Standar Kunci | Mitigasi Ancaman | Panduan Lengkap |
+| :---: | :--- | :--- | :--- | :---: |
+| **01** | **Data & Code Inventory** | CycloneDX 1.6 CBOM, NIST SP 1800-38B, PCI DSS 12.3.3 | *Store Now, Decrypt Later (SNDL)* | [Buka Modul 1 →](./docs/modules/01-data-and-code-inventory.md) |
+| **02** | **Quantum Transport (TLS)** | RFC 10024 (`X25519MLKEM768`), OpenSSL 3.2+ OQS | *Harvest Now, Decrypt Later (HNDL)* | [Buka Modul 2 →](./docs/modules/02-quantum-transport-tls.md) |
+| **03** | **App Asymmetric PQC** | NIST FIPS 203/204/205, SNAP BI ASPI, Composite Sigs | Pensiunnya RSA-2048 & Single-Key Break | [Buka Modul 3 →](./docs/modules/03-application-asymmetric-pqc-snap-bi.md) |
+| **04** | **Identity & AI Governance** | RFC 9449 (DPoP), RFC 8705 (mTLS), CNCF SPIFFE/SPIRE | Token Theft & AI Agent Rogue Execution | [Buka Modul 4 →](./docs/modules/04-identity-ai-agent-governance.md) |
+| **05** | **Performance & Hardware** | PKCS#11 v3.2, 32KB Buffer Tuning, HTTP/2 HPACK, gRPC | MTU 1500 Fragmentation & HTTP 431 Crash | [Buka Modul 5 →](./docs/modules/05-performance-hardware-mitigation.md) |
+| **Case** | **BIS Project Leap** | TARGET2 / RTGS Wholesale Payments PQC Evaluation | Real-World Buffer Overflow & SWIFT Issues | [Buka Studi Kasus →](./docs/case-studies/bis-project-leap.md) |
+| **Lab** | **Portofolio 7 Hari** | SNAP BI Hybrid PQC Payment Gateway (Java 21 / NGINX) | Eksekusi Hands-On Siap Kerja | [Buka Jadwal Lab →](./docs/7-day-portfolio-plan.md) |
+
+---
+
 ## MODUL 1: Kriptografi Data & Inventarisasi Kode (*Target: Now — Next 12 Months*)
 > **Tujuan:** Mengetahui posisi kerentanan kriptografi di seluruh repositori (*Cryptographic Visibility*) dan mengamankan *data at rest* dari serangan **Store Now, Decrypt Later (SNDL)**.
 
@@ -83,10 +134,10 @@ flowchart TD
   * *Penerbit:* NIST National Cybersecurity Center of Excellence (NCCoE).
   * *Fokus:* Volume B memberikan cetak biru arsitektur enterprise untuk *Cryptographic Discovery*, otomatisasi audit dependensi, dan integrasi CBOM ke siklus CI/CD.
   * [NIST NCCoE SP 1800-38 Project](https://www.nist.gov/programs-projects/migration-post-quantum-cryptography)
-  * *File PDF Resmi (Google Drive):*
-    * [Post Quantum Cryptography - Google Drive](https://drive.google.com/drive/u/0/folders/1cYg1miKm8vfst9E355slB-pz1Hgd1mEs) (Memuat berkas PDF lengkap NIST SP 1800-38 Volume A, Volume B, dan Volume C)
-  * *Panduan Teknis Terpadu (Bahasa Indonesia):*
-    * [`docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md`](./docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md) (Sintesis teknis Volume A, B, dan C: Teorema Mosca, CBOM, format sertifikat X.509 hibrida, dan dilema digest-then-sign HSM)
+  * *Berkas PDF di Repositori:*
+    * [Volume A (Executive Summary)](./references/pqc-migration-nist-sp-1800-38a-preliminary-draft.pdf)
+    * [Volume B (Approach, Architecture, and Security Characteristics)](./references/pqc-migration-nist-sp-1800-38b-preliminary-draft.pdf)
+    * [Volume C (How-To Guides)](./references/pqc-migration-nist-sp-1800-38c-preliminary-draft.pdf)
 * **Spesifikasi CycloneDX v1.6 (Cryptographic Assets / CBOM):**
   * *Fokus:* Skema standar industri untuk mendokumentasikan aset kriptografi: algoritma, panjang kunci, mode operasi cipher, fungsi padding, level keamanan (NIST Category 1–5), dan sertifikat digital.
   * [CycloneDX 1.6 Cryptographic Properties Specification](https://cyclonedx.org/docs/1.6/)
@@ -138,7 +189,7 @@ flowchart TD
 * **Open Quantum Safe (OQS) Project (Linux Foundation):**
   * Pustaka inti C (`liboqs`) dan provider OpenSSL 3.2+ (`oqs-provider`).
   * [GitHub: open-quantum-safe/liboqs](https://github.com/open-quantum-safe/liboqs) & [oqs-provider](https://github.com/open-quantum-safe/oqs-provider)
-  * *Lab Praktik Cepat dengan Docker:*
+  * *Lab Praktik Cepat dengan Docker (Tersedia skrip di [`examples/docker/run-oqs-sandbox.sh`](./examples/docker/run-oqs-sandbox.sh)):*
     ```bash
     # 1. Jalankan NGINX Reverse Proxy dengan kemampuan PQC TLS 1.3
     docker run --name oqs-nginx -p 4433:4433 -d openquantumsafe/nginx
@@ -177,6 +228,8 @@ flowchart TD
   *(Catatan Arsitektur: Pada Java 21, developer wajib mendaftarkan provider Bouncy Castle v1.80+ secara eksplisit).*
 
 #### Contoh Implementasi Java: Signing Header SNAP BI dengan ML-DSA-65
+*Source code lengkap siap compile tersedia di repositori: [`examples/java/SnapPqcSigner.java`](./examples/java/SnapPqcSigner.java).*
+
 ```java
 package com.bank.snap.crypto;
 
@@ -316,7 +369,7 @@ sequenceDiagram
     server:
       max-http-request-header-size: 32KB
     ```
-  * **NGINX API Gateway / Reverse Proxy:**
+  * **NGINX API Gateway / Reverse Proxy (Tersedia template di [`examples/nginx/nginx-pqc-buffer.conf`](./examples/nginx/nginx-pqc-buffer.conf)):**
     ```nginx
     # nginx.conf
     client_header_buffer_size 4k;
@@ -333,12 +386,13 @@ sequenceDiagram
   * Eksperimen nyata migrasi PQC pada sistem pembayaran antar-bank **Real-Time Gross Settlement (RTGS / TARGET2)**.
   * *Insight Kunci:* Hambatan terbesar adopsi PQC di perbankan bukan pada komputasi CPU, melainkan **pembengkakan ukuran paket (10x)** yang memicu *buffer overflow* pada konektor pembayaran warisan (ESMIG / SWIFT) dan fragmentasi paket jaringan.
   * [BIS Project Leap Phase 2 Report: PQC in Payment Systems](https://www.bis.org/publ/othp86.htm)
+  * *Baca Dokumen Lengkap di Repositori:* [Studi Kasus Analisis BIS Project Leap](./docs/case-studies/bis-project-leap.md)
 
 ---
 
 ## 📅 Panduan Eksekusi Portofolio 7 Hari: "SNAP BI Hybrid PQC Payment Gateway"
 
-Berikut panduan langkah demi langkah untuk mengimplementasikan proyek portofolio dalam 1 minggu:
+Berikut panduan langkah demi langkah untuk mengimplementasikan proyek portofolio dalam 1 minggu *(Panduan detail harian tersedia di [`docs/7-day-portfolio-plan.md`](./docs/7-day-portfolio-plan.md))*:
 
 | Hari | Tahapan & Fokus | Komponen & Hands-On Deliverables |
 | :--- | :--- | :--- |
@@ -389,7 +443,7 @@ Berikut panduan langkah demi langkah untuk mengimplementasikan proyek portofolio
 
 ## 🏛️ Dokumen Sumber Kebijakan & Referensi Resmi
 
-Dokumen resmi standar dan cetak biru kebijakan disertakan di dalam repository ini:
+Dokumen resmi standar dan cetak biru kebijakan disertakan di dalam repositori ini *(Panduan urutan membaca tersedia di [`references/README.md`](./references/README.md))*:
 
 ### 1. Bank Indonesia — Sistem Pembayaran
 * **File Resmi (PDF):** [`references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf`](./references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf) (26 MB, 52 Halaman)
