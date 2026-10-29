@@ -1,7 +1,7 @@
 # Roadmap Belajar Terapan: Applied Post-Quantum Cryptography (PQC) untuk Backend Engineer
 
 > **Fokus Arsitektur:** Arsitektur Keamanan Backend, API Gateway, Standar Nasional Open API Pembayaran (**SNAP BI**), Infrastruktur Switching / Fast Payment, dan Visi Regulasi **BSPI 2030 (Bank Indonesia)**.  
-> **Dokumen Referensi Resmi:** [`references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf`](./references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf) | Ringkasan: [`references/bspi-2030-executive-summary.md`](./references/bspi-2030-executive-summary.md)
+> **Dokumen Referensi Resmi:** [`references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf`](./references/Blueprint-Sistem-Pembayaran-Indonesia-2030_2.pdf) | Ringkasan BSPI: [`references/bspi-2030-executive-summary.md`](./references/bspi-2030-executive-summary.md) | Panduan Teknis NIST SP 1800-38: [`docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md`](./docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md)
 
 ---
 
@@ -85,6 +85,8 @@ flowchart TD
   * [NIST NCCoE SP 1800-38 Project](https://www.nist.gov/programs-projects/migration-post-quantum-cryptography)
   * *File PDF Resmi (Google Drive):*
     * [Post Quantum Cryptography - Google Drive](https://drive.google.com/drive/u/0/folders/1cYg1miKm8vfst9E355slB-pz1Hgd1mEs) (Memuat berkas PDF lengkap NIST SP 1800-38 Volume A, Volume B, dan Volume C)
+  * *Panduan Teknis Terpadu (Bahasa Indonesia):*
+    * [`docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md`](./docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md) (Sintesis teknis Volume A, B, dan C: Teorema Mosca, CBOM, format sertifikat X.509 hibrida, dan dilema digest-then-sign HSM)
 * **Spesifikasi CycloneDX v1.6 (Cryptographic Assets / CBOM):**
   * *Fokus:* Skema standar industri untuk mendokumentasikan aset kriptografi: algoritma, panjang kunci, mode operasi cipher, fungsi padding, level keamanan (NIST Category 1–5), dan sertifikat digital.
   * [CycloneDX 1.6 Cryptographic Properties Specification](https://cyclonedx.org/docs/1.6/)

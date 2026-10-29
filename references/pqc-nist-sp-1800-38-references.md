@@ -8,3 +8,9 @@ Berkas PDF asli untuk ketiga volume dokumen NIST SP 1800-38 telah diarsipkan sec
 1. `pqc-migration-nist-sp-1800-38a-preliminary-draft.pdf` (Volume A: Executive Summary)
 2. `pqc-migration-nist-sp-1800-38b-preliminary-draft.pdf` (Volume B: Approach, Architecture, and Security Characteristics of Public Key Application Discovery Tools)
 3. `pqc-migration-nist-sp-1800-38c-preliminary-draft.pdf` (Volume C: Quantum-Resistant Cryptography Technology Interoperability and Performance Report)
+
+---
+
+### Panduan Teknis Terpadu:
+Sintesis dan ringkasan teknis lengkap berbahasa Indonesia untuk ketiga volume di atas dapat dibaca pada:
+* [`docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md`](../docs/guides/panduan-migrasi-pqc-nist-sp-1800-38.md)
